@@ -49,10 +49,7 @@ Facilitar a divisão de despesas em grupo (churrascos, viagens, encontros), calc
 5) **Acertos (Quem paga quem)** — “Fulano → Sicrana: R$ X,XX”; ações: **PIX/QR**, **Copiar**, **Compartilhar**
 6) **QR PIX** — QR + valor + “copia e cola”
 
-## 5) Prompt para Figma (Make/Autodesign)
-Crie um app mobile chamado **Panela – Rateio** com as telas: Home (Grupos), Criar/Editar Grupo, Detalhes do Grupo (abas Saldos/Despesas), Nova Despesa (modos: Igual, Percentual, Exatos), Acertos (Quem paga quem) e QR PIX. Use paleta: primária #4F46E5, secundária #06B6D4, neutros #111827/#6B7280/#F3F4F6/#FFFFFF. Tipografia Inter semibold para títulos e regular para corpo. Layout minimalista, foco em 3–4 toques por ação. Componentes: cards, chips de status, botões com ícone, lista com subtítulo. Prepare auto layout e variações para estados vazios. Organização de páginas: 1) Wireframes low-fi, 2) UI high-fi, 3) Prototype (navegação stack). Conecte: Home → Grupo → Despesas/Saldos → Nova Despesa → Acertos → QR PIX.
-
-## 6) Links Solicitados
+## 5) Links Solicitados
 - **Documento (README)**: este arquivo.
 - **Figma (Starter/Placeholder)**: https://www.figma.com/file/ABC123/Panela-Rateio-MVP  
 (Substitua pelo link real assim que criar o arquivo no Figma.)
