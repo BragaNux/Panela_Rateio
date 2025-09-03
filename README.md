@@ -51,8 +51,7 @@ Facilitar a divisão de despesas em grupo (churrascos, viagens, encontros), calc
 
 ## 5) Links Solicitados
 - **Documento (README)**: este arquivo.
-- **Figma (Starter/Placeholder)**: https://www.figma.com/file/ABC123/Panela-Rateio-MVP  
-(Substitua pelo link real assim que criar o arquivo no Figma.)
+- **Figma (Starter/Placeholder)**: https://www.figma.com/make/igl6p8uncLiiKWTUCULZqJ/Panela-App-Mobile?fullscreen=1
 
 ---
 © 2025 — Planejamento MVP Panela — sem código
