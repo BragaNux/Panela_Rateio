@@ -3,7 +3,7 @@
 > Documento para o professor com **ideia e planejamento** (sem código). Inclui objetivo, funcionamento, público-alvo, tecnologias, mockups (descritos) e guia de navegação.
 
 ## 1) Objetivo Geral
-Facilitar a divisão de despesas em grupo (churrascos, viagens, repúblicas), calculando automaticamente quanto cada pessoa deve pagar/receber e gerando **transferências mínimas** com **QR Code PIX** por pessoa.
+Facilitar a divisão de despesas em grupo (churrascos, viagens, encontros), calculando automaticamente quanto cada pessoa deve pagar/receber e gerando **transferências mínimas** com **QR Code PIX** por pessoa.
 
 **Metas do MVP**
 - Fechar um rateio em **< 2 minutos** após o último lançamento de despesa.
