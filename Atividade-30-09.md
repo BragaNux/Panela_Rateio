@@ -8,7 +8,7 @@ O projeto Panela Rateio é uma aplicação full-stack, estruturada com backend e
 
 | Camada             | Tecnologia                            | Função                                                                         |
 | ------------------ | ------------------------------------- | ------------------------------------------------------------------------------ |
-| Backend            | C# + ASP.NET Core 7                   | Criação de API REST para autenticação, grupos, membros e despesas              |
+| Backend            | C# + ASP.NET Core 9                   | Criação de API REST para autenticação, grupos, membros e despesas              |
 | Banco de Dados     | PostgreSQL (Docker)                   | Armazenamento de usuários, grupos, membros, despesas e histórico de migrations |
 | Autenticação       | JWT (JSON Web Token)                  | Proteção das rotas e validação de usuários autenticados                        |
 | Documentação/Teste | Swagger / Postman                     | Teste e documentação de endpoints da API                                       |
