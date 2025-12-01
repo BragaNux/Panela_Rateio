@@ -1,0 +1,5 @@
+<scale xmlns:android="http://schemas.android.com/apk/res/android"
+    android:drawable="@mipmap/ic_launcher_foreground"
+    android:scaleWidth="0.70"
+    android:scaleHeight="0.70"
+    android:gravity="center" />

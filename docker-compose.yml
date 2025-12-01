@@ -1,0 +1,56 @@
+version: '3.8'
+
+services:
+  api:
+    build:
+      context: ./panela_backend
+      dockerfile: Dockerfile
+    container_name: panela-api
+    env_file:
+      - .env
+    environment:
+      ASPNETCORE_ENVIRONMENT: ${ASPNETCORE_ENVIRONMENT:-Production}
+      ASPNETCORE_URLS: http://0.0.0.0:80
+      DATABASE_URL: ${DATABASE_URL}
+      JWT_SECRET: ${JWT_SECRET}
+      ENABLE_SCHEMA_CHECK: ${ENABLE_SCHEMA_CHECK:-false}
+      CORS_ORIGIN: ${CORS_ORIGIN:-https://panela.host}
+      GEMINI_API_KEY: ${GEMINI_API_KEY}
+    expose:
+      - "80"
+    ports:
+      - "8080:80"
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost/api/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+    restart: unless-stopped
+    networks:
+      - web
+
+  caddy:
+    image: caddy:2
+    container_name: panela-caddy
+    ports:
+      - "80:80"
+      - "443:443"
+    environment:
+      DOMAIN: ${DOMAIN:-api.panela.host}
+      EMAIL: ${EMAIL:-smtp@panela.host}
+    volumes:
+      - ./panela_backend/deploy/Caddyfile:/etc/caddy/Caddyfile:ro
+      - caddy_data:/data
+      - caddy_config:/config
+    restart: unless-stopped
+    networks:
+      - web
+
+networks:
+  web:
+    driver: bridge
+
+volumes:
+  caddy_data:
+  caddy_config:

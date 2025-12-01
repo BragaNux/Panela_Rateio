@@ -1,0 +1,63 @@
+{$DOMAIN} {
+  encode gzip
+  log {
+    output stdout
+    format console
+  }
+  tls {$EMAIL}
+  header {
+    Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
+    X-Content-Type-Options "nosniff"
+    X-Frame-Options "DENY"
+    Referrer-Policy "no-referrer-when-downgrade"
+    Access-Control-Allow-Origin "*"
+    Access-Control-Allow-Methods "GET,POST,PUT,DELETE,OPTIONS"
+    Access-Control-Allow-Headers "Content-Type, Authorization"
+  }
+  @options {
+    method OPTIONS
+  }
+  respond @options 204
+  handle /api/* {
+    reverse_proxy api:80 {
+      health_checks {
+        active {
+          path /api/health/db
+          interval 30s
+          timeout 5s
+          expect_status 200
+        }
+      }
+    }
+  }
+  handle {
+    reverse_proxy api:80
+  }
+}
+
+:80 {
+  encode gzip
+  log {
+    output stdout
+    format console
+  }
+  header {
+    Strict-Transport-Security "max-age=0"
+    X-Content-Type-Options "nosniff"
+    X-Frame-Options "DENY"
+    Referrer-Policy "no-referrer-when-downgrade"
+    Access-Control-Allow-Origin "*"
+    Access-Control-Allow-Methods "GET,POST,PUT,DELETE,OPTIONS"
+    Access-Control-Allow-Headers "Content-Type, Authorization"
+  }
+  @options {
+    method OPTIONS
+  }
+  respond @options 204
+  handle /api/* {
+    reverse_proxy api:80
+  }
+  handle {
+    reverse_proxy api:80
+  }
+}

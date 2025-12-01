@@ -1,0 +1,21 @@
+# Backend
+panela_backend/bin/
+panela_backend/obj/
+panela_backend/tmp_build/
+panela_backend/wwwroot/avatars/
+
+# Mobile
+panela_mobile/node_modules/
+panela_mobile/.expo/
+panela_mobile/android/.gradle/
+panela_mobile/android/build/
+panela_mobile/android/app/build/
+
+# Env / Secrets
+.env
+*.env
+
+# OS / Editor
+.DS_Store
+Thumbs.db
+*.log

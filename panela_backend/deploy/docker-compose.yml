@@ -1,0 +1,41 @@
+version: "3.8"
+services:
+  api:
+    build: ..
+    image: panela-api:latest
+    environment:
+      - DATABASE_URL=${DATABASE_URL}
+      - JWT_SECRET=${JWT_SECRET}
+      - ENABLE_SCHEMA_CHECK=${ENABLE_SCHEMA_CHECK:-false}
+      - CORS_ORIGIN=${CORS_ORIGIN}
+      - GEMINI_API_KEY=${GEMINI_API_KEY}
+    expose:
+      - "80"
+    restart: always
+    networks:
+      - web
+
+  caddy:
+    image: caddy:2
+    ports:
+      - "80:80"
+      - "443:443"
+    environment:
+      - DOMAIN=${DOMAIN}
+      - EMAIL=${EMAIL}
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile
+      - caddy_data:/data
+      - caddy_config:/config
+    restart: always
+    networks:
+      - web
+
+networks:
+  web:
+    driver: bridge
+
+volumes:
+  caddy_data:
+  caddy_config:
+
